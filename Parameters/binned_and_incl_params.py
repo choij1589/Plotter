@@ -1,8 +1,7 @@
 params = {
-	# Z
+    # Z
     "ZMass": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
@@ -14,33 +13,30 @@ params = {
             "ratio_range": [0.5, 1.5]
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
     "yZ": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "y^{Z}",
-            "y_title": "Events", 
-            "ratio_title" : "x/Default",
+            "y_title": "Events",
+            "ratio_title": "x/Default",
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
-	"ptZ": {
+    "ptZ": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": True,
             "grid": True
         },
@@ -48,39 +44,36 @@ params = {
             "rebin": 2,
             "x_title": "p_{T}(Z)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
+            "ratio_title": "x/Default",
             "x_range": [0., 200.],
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
-	"phiZ": {
+    "phiZ": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "#phi(Z)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
+            "ratio_title": "x/Default",
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
-	# Leptons
-	"ptl1": {
+    # Leptons
+    "ptl1": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": True,
             "grid": True
         },
@@ -88,19 +81,18 @@ params = {
             "rebin": 2,
             "x_title": "p_{T}(l1)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
-			"x_range" : [0., 200.],
+            "ratio_title": "x/Default",
+            "x_range": [0., 200.],
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
-	"ptl2": {
+    "ptl2": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": True,
             "grid": True
         },
@@ -108,245 +100,221 @@ params = {
             "rebin": 2,
             "x_title": "p_{T}(l2)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
-			"x_range" : [0., 200.],
+            "ratio_title": "x/Default",
+            "x_range": [0., 200.],
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
-	"etal1": {
+    "etal1": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "#eta(l1)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
+            "ratio_title": "x/Default",
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
-	"etal2": {
+    "etal2": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "#eta(l2)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
+            "ratio_title": "x/Default",
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
-	"phil1": {
+    "phil1": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "#phi(l1)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
+            "ratio_title": "x/Default",
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
-	"phil2": {
+    "phil2": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "#phi(l2)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
+            "ratio_title": "x/Default",
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
-	"nLeptons": {
+    "nLeptons": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "N(l)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
+            "ratio_title": "x/Default",
             "ratio_range": [0.5, 1.5],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
     # Jets
     "ptj1": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": True,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "p_{T}(j1)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
-            "x_range" : [0., 200.],
-            "ratio_range": [0.5, 1.5],
+            "ratio_title": "x/Default",
+            "x_range": [0., 200.],
+            "ratio_range": [0., 2.0],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
     "ptj2": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": True,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "p_{T}(j2)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
-            "x_range" : [0., 200.],
-            "ratio_range": [0.5, 1.5],
+            "ratio_title": "x/Default",
+            "x_range": [0., 200.],
+            "ratio_range": [0., 2.0],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
     "etaj1": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "#eta(j1)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
-            "ratio_range": [0.5, 1.5],
+            "ratio_title": "x/Default",
+            "ratio_range": [0., 2.0],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
     "etaj2": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "#eta(j2)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
-            "ratio_range": [0.5, 1.5],
+            "ratio_title": "x/Default",
+            "ratio_range": [0., 2.0],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
     "phij1": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "#phi(j1)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
-            "ratio_range": [0.5, 1.5],
+            "ratio_title": "x/Default",
+            "ratio_range": [0., 2.0],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
     "phij2": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "#phi(j2)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
-            "ratio_range": [0.5, 1.5],
+            "ratio_title": "x/Default",
+            "ratio_range": [0., 2.0],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
     "nJets": {
         "cvs_params": {
-            "leg_size": "medium",
             "logy": False,
             "grid": True
         },
         "hist_params": {
-            "rebin": -1,
             "x_title": "N(j)",
             "y_title": "Events",
-            "ratio_title" : "x/Default",
-            "ratio_range": [0.5, 1.5],
+            "ratio_title": "x/Default",
+            "ratio_range": [0.0, 2.0],
         },
         "info_params": {
-            "info": "Normed to #it{L}_{int} = 150 fb^{-1}",
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
             "cms_text": "CMS",
-            "extra_text": "Preliminary"
+            "extra_text": "Work on progress"
         }
     },
 }

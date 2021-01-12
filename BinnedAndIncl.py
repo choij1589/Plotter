@@ -1,14 +1,20 @@
-from ROOT import TFile, THStack
+from ROOT import TFile, THStack, TLegend
 from PlotterBase import PlotterBase
+
 
 class BinnedAndIncl(PlotterBase):
     """ Add parameters in hist_params to add more functionalities"""
+
     def __init__(self, cvs_params, hist_params, info_params):
         logy = cvs_params['logy']
         grid = cvs_params['grid']
         super().__init__(cvs_type="ratio", logy=logy, grid=grid)
         self.hist_params = hist_params
-        self.info_params = info_params 
+        self.info_params = info_params
+        self.__set_legend()
+
+    def __set_legend(self):
+        self.legend = TLegend(0.69, 0.60, 0.90, 0.90)
 
     def get_hists(self, h_incl, hs_binned):
         # Initialize parameters
@@ -47,7 +53,7 @@ class BinnedAndIncl(PlotterBase):
     def __decorate_hists(self):
         print("INFO: y axis range set to be maximum of inclusive plot")
         y_range = self.h_incl.GetMaximum()
-        y_title = self.hist_params['y_title'] 
+        y_title = self.hist_params['y_title']
 
         # decorate
         self.h_incl.SetStats(0)
@@ -60,20 +66,22 @@ class BinnedAndIncl(PlotterBase):
 
         # Y axis
         self.h_incl.GetYaxis().SetTitle(y_title)
-        self.h_incl.GetYaxis().SetRangeUser(0., y_range*1.3)    # Get enough space to set the legend
+        # Get enough space to set the legend
+        self.h_incl.GetYaxis().SetRangeUser(0., y_range*1.3)
         if self.logy:
-            self.h_incl.GetYaxis().SetRangeUser(0, y_range*100)
-        
+            self.h_incl.GetYaxis().SetRangeUser(1, y_range*100)
+
         for name, hist in self.hs_binned.items():
             hist.GetXaxis().SetLabelSize(0)
 
-        # TODO: Add to a legend
+        # Add to a legendi
+        self.legend.AddEntry(self.h_incl, "Incl", "lep")
 
     def __make_stack_and_syst(self):
         for name, hist in self.hs_binned.items():
             hist.GetXaxis().SetLabelSize(0)
             self.stack.Add(hist)
-            # TODO: Add to a legend
+            self.legend.AddEntry(hist, name, 'f')
 
             # combine a binned histograms to draw systematics
             if self.syst == None:
@@ -87,7 +95,7 @@ class BinnedAndIncl(PlotterBase):
         self.syst.SetFillColorAlpha(12, 0.6)
         self.syst.SetFillStyle(3144)
         self.syst.GetXaxis().SetLabelSize(0)
-        # TODO: Add to a legend
+        self.legend.AddEntry(self.syst, 'stat error', 'f')
 
     def __make_ratio(self):
         ratio_range = self.hist_params['ratio_range']
@@ -120,6 +128,9 @@ class BinnedAndIncl(PlotterBase):
         cms_text = self.info_params['cms_text']
         extra_text = self.info_params['extra_text']
 
+        super().set_canvas()
+        super().set_logo()
+        super().set_info()
         super().pad_up().cd()
         self.h_incl.Draw("p&hist")
         self.stack.Draw("hist & pfc & same")
@@ -127,9 +138,8 @@ class BinnedAndIncl(PlotterBase):
         self.h_incl.Draw("p&hist&same")
         self.h_incl.Draw("e1 & same")
 
-        #super().legend().Draw()
-        print(info)
-        super().info().DrawLatexNDC(0.63, 0.91, info)
+        self.legend.Draw()
+        super().info().DrawLatexNDC(0.6, 0.91, info)
         super().logo().DrawLatexNDC(0.15, 0.83, cms_text)
         super().extra_logo().DrawLatexNDC(0.15, 0.78, extra_text)
 
@@ -141,76 +151,96 @@ class BinnedAndIncl(PlotterBase):
         super().pad_up().Draw()
         super().pad_down().Draw()
 
+
 if __name__ == "__main__":
-	from Parameters.binned_and_incl_params import params
+    from Parameters.binned_and_incl_params import params
+
+    def plot_maker(obs, root_files, weights, selector_output, output_path, store_name):
+        cvs_params = params[obs]["cvs_params"]
+        hist_params = params[obs]['hist_params']
+        info_params = params[obs]["info_params"]
+
+        hist_name = obs
+        hist_incl = None
+        hists_binned = {}
+        for file_name in file_names:
+            if file_name == "DYm50_012j_nlo_cp5":
+                dir_name = "DYm50_cp5_GridToNano"
+            elif file_name == "DYm50_0j_nlo_cp5":
+                dir_name = "DYm50_0j_nlo_cp5_GridToNano"
+            elif file_name == "DYm50_1j_nlo_cp5":
+                dir_name = "DYm50_1j_nlo_cp5_GridToNano"
+            elif file_name == "DYm50_2j_nlo_cp5":
+                dir_name = "DYm50_2j_nlo_cp5_GridToNano"
+            else:
+                dir_name = file_name
+
+            # combine ee and mm channels
+            scale = weights[file_name]*lumi*1000
+            hist_path = dir_name + "/" + hist_name
+            hist_ee = root_files[file_name].Get(
+                hist_path + selector_arg + "_ee")
+            hist_mm = root_files[file_name].Get(
+                hist_path + selector_arg + "_mm")
+            hist = hist_ee.Clone(file_name + selector_arg + "_clone")
+            hist.Add(hist_mm)
+            hist.Scale(scale)
+
+            key = file_name
+            if selector_arg == "":
+                file_name += "_dressedLep"
+            elif selector_arg == "_prefsr":
+                file_name += "_matchedGenJet"
+            else:
+                file_name += selector_arg
+
+            if "012j" in file_name:
+                hist_incl = hist
+            else:
+                hists_binned[key] = hist
+
+        plotter = BinnedAndIncl(cvs_params, hist_params, info_params)
+        plotter.get_hists(hist_incl, hists_binned)
+        plotter.combine()
+        if selector_arg == "":
+            path = output_path + store_name + "_" + obs + "_dressedLep" + ".png"
+        elif selector_arg == "_prefsr":
+            path = output_path + store_name + "_" + obs + "_matchedGenJet" + ".png"
+        else:
+             + output_pathstore_name + "_" + obs + selector_arg + ".png"
+        plotter.save(path)
+
     # initial settings
-	file_names = ["DYm50_012j_nlo_cp5", "DYm50_0j_nlo_cp5", "DYm50_1j_nlo_cp5", "DYm50_2j_nlo_cp5"]
-	selector_arg = "_lhe"
-	observables = ["ZMass", "yZ", "ptZ", "phiZ",
-			        "ptl1", "ptl2", "etal1", "etal2", "phil1", "phil2", "nLeptons",
-					"ptj1", "ptj2", "etaj1", "etaj2", "phij1", "phij2", "nJets"]
-	lumi = 150. # fb^-1
-	weights = {
-			"DYm50_012j_nlo_cp5" : 2.99030301E-03,
-			"DYm50_0j_nlo_cp5" : 8.43901018E-04,
-			"DYm50_1j_nlo_cp5" : 7.35992842E-04,
-			"DYm50_2j_nlo_cp5" : 4.39098262E-04,
-			#"DYm50_012j_nlo_cuep5m1" : 2.73003549E-03,
-			#"DYm50_0j_nlo_cuep5m1" : 9.57783732E-04,
-			#"DYm50_1j_nlo_cuep5m1" : 7.61277377E-04,
-			#"DYm50_2j_nlo_cuep5m1" : 3.93164481E-04
-	}
-	obs = "phil1"
-	cvs_params = params[obs]["cvs_params"]
-	hist_params = params[obs]['hist_params']
-	info_params = params[obs]["info_params"]
-	output_path = "./Outputs/DrellYan/CP5/BareLep"
+    file_names = ["DYm50_012j_nlo_cp5", "DYm50_0j_nlo_cp5",
+                  "DYm50_1j_nlo_cp5", "DYm50_2j_nlo_cp5"]
+    weights = {
+        "DYm50_012j_nlo_cp5": 2.99030301E-03,
+        "DYm50_0j_nlo_cp5": 8.43901018E-04,
+        "DYm50_1j_nlo_cp5": 7.35992842E-04,
+        "DYm50_2j_nlo_cp5": 4.39098262E-04,
+        # "DYm50_012j_nlo_cuep5m1" : 2.73003549E-03,
+        # "DYm50_0j_nlo_cuep5m1" : 9.57783732E-04,
+        # "DYm50_1j_nlo_cuep5m1" : 7.61277377E-04,
+        # "DYm50_2j_nlo_cuep5m1" : 3.93164481E-04
+    }
+    observables = ["ZMass", "yZ", "ptZ", "phiZ",
+                   "ptl1", "ptl2", "etal1", "etal2", "phil1", "phil2", "nLeptons",
+                   "ptj1", "ptj2", "etaj1", "etaj2", "phij1", "phij2", "nJets"]
+    zboson = ['ZMass', 'yZ', 'ptZ', 'phiZ']
+    leptons = ['ptl1', 'ptl2', 'etal1', 'etal2', 'phil1', 'phil2', 'nLeptons']
+    jets = ['ptj1', 'ptj2', 'etaj1', 'etaj2', 'phij1', 'phij2', 'nJets']
+    lumi = 150.  # fb^-1
+    selector_arg = ""
+    output_path = "/root/workspace/GenValidation/Plotter/Outputs/DrellYan/CP5/DressedLep/"
 
-	# get histograms
-	root_files = {}
-	selector_output = "/root/workspace/GenValidation/SelectorOutput/DrellYan/"
-	for name in file_names:
-		this_path = selector_output + name + ".root"
-		root_files[name] = TFile(this_path)
-	
-	hist_name = obs
-	hist_incl = None
-	hists_binned = {}
-	for file_name in file_names:
-		if file_name == "DYm50_012j_nlo_cp5":
-			dir_name = "DYm50_cp5_GridToNano"
-		elif file_name == "DYm50_0j_nlo_cp5":
-			dir_name = "DYm50_0j_nlo_cp5_GridToNano"
-		elif file_name == "DYm50_1j_nlo_cp5":
-			dir_name = "DYm50_1j_nlo_cp5_GridToNano"
-		elif file_name == "DYm50_2j_nlo_cp5":
-			dir_name = "DYm50_2j_nlo_cp5_GridToNano"
-		else:
-			dir_name = file_name
+    # get histograms
+    root_files = {}
+    selector_output = "/root/workspace/GenValidation/SelectorOutput/DrellYan/"
+    store_name = "DYm50_nlo_cp5"
+    for name in file_names:
+        this_path = selector_output + name + ".root"
+        root_files[name] = TFile(this_path)
 
-		# combine ee and mm channels
-		scale = weights[file_name]*lumi*1000
-		hist_path = dir_name + "/" + hist_name
-		hist_ee = root_files[file_name].Get(hist_path + selector_arg + "_ee")
-		hist_mm = root_files[file_name].Get(hist_path + selector_arg + "_mm")
-		hist = hist_ee.Clone(file_name + selector_arg + "_clone")
-		hist.Add(hist_mm)
-		hist.Scale(scale)
-
-		key = file_name
-		if selector_arg == "":
-			file_name += "_dressedLep"
-		elif selector_arg == "_prefsr":
-			file_name += "_matchedGenJet"
-		else:
-			file_name += selector_arg
-
-		if "012j" in file_name:
-			hist_incl = hist
-		else:
-			hists_binned[key] = hist
-	
-	plotter = BinnedAndIncl(cvs_params, hist_params, info_params)
-	plotter.get_hists(hist_incl, hists_binned)
-	plotter.combine()
-	plotter.save(output_path + "_" + obs +  selector_arg + ".pdf")
+    for obs in observables:
+        plot_maker(obs, root_files, weights,
+                   selector_output, output_path, store_name)
