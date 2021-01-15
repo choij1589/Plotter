@@ -11,7 +11,8 @@ class Kinematics(PlotterBase):
         self.__set_legend()
 
     def __set_legend(self):
-        self.legend = TLegend(0.69, 0.60, 0.90, 0.90)
+        self.legend = TLegend(0.69, 0.70, 0.90, 0.90)
+        #self.legend = TLegend(0.49, 0.80, 0.70, 0.90)
 
     def get_hists(self, hists):
         self.base_hist = None
@@ -149,21 +150,28 @@ if __name__ == "__main__":
     files_onshellW = ['MHc100_MA15', 'MHc130_MA15', 'MHc130_MA45', 'MHc160_MA15', 'MHc160_MA45', 'MHc160_MA75']
     files_offshellW_MHc70to100 = ['MHc70_MA40', 'MHc70_MA65', 'MHc100_MA25', 'MHc100_MA60', 'MHc100_MA95']
     files_offshellW_MHc130to160 = ['MHc130_MA55', 'MHc130_MA90', 'MHc130_MA125', 'MHc160_MA85', 'MHc160_MA120', 'MHc160_MA155']
-    path = "3mu/muons_offshellW/"
-    obs = "1/pt"
+    
+    path = "3mu/bjets_cleaned/"
+    obs = "MVA"
     cvs_params = params[obs]['cvs_params']
     hist_params = params[obs]['hist_params']
     info_params = params[obs]['info_params']
-
+    output_path = "/root/workspace/HcToWA/Plotter/Outputs/SignalStudy/MVA/"
     # get histograms
     hists = {}
-    for name in files_offshellW_MHc70to100:
-        this_path = skflat_output + name + ".root"
-        this_file = TFile(this_path)
-        this_hist = this_file.Get(path + obs)
-        this_hist.SetDirectory(0)
-        hists[name] = this_hist
+    #for name in files_onshellW:
+    #    this_path = skflat_output + name + ".root"
+    #    this_file = TFile(this_path)
+    #    this_hist = this_file.Get(path + obs)
+    #    this_hist.SetDirectory(0)
+    #    hists[name] = this_hist
+    file_offshell = TFile(skflat_output + 'MHc130_MA90.root')
+    hist_offshell = file_offshell.Get("3mu/muons_offshellW/1/MVA")
+    hist_fake = file_offshell.Get("3mu/muons_fake/1/MVA")
+    hists["offshellW"] = hist_offshell
+    hists['fake'] = hist_fake
+
     plotter = Kinematics(cvs_params, hist_params, info_params)
     plotter.get_hists(hists)
     plotter.combine()
-    plotter.save("test.png")
+    plotter.save(output_path + "MHc130_MA90_MVAscore.png")
