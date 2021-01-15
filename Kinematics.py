@@ -58,8 +58,10 @@ class Kinematics(PlotterBase):
             self.hists[name].SetStats(0)
 
             # line color
+            if _color == 5:
+                _color += 1
             self.hists[name].SetLineColor(_color)
-            self.hists[name].SetLineWidth(1)
+            self.hists[name].SetLineWidth(2)
             _color += 1
 
             # x axis
@@ -141,7 +143,13 @@ if __name__ == "__main__":
                     'MHc130_MA55', 'MHc130_MA90', 'MHc130_MA125']
     files_MHc160 = ['MHc160_MA15', 'MHc160_MA45', 'MHc160_MA75',
                     'MHc160_MA85', 'MHc160_MA120', 'MHc160_MA155']
-    path = "1e2mu/muons_fake/"
+    files_belowZ = ['MHc70_MA15', 'MHc70_MA40', 'MHc70_MA65', 'MHc100_MA15', 'MHc100_MA25', 'MHc100_MA60', 'MHc130_MA15', 'MHc130_MA45', 'MHc130_MA55', 'MHc160_MA15', 'MHc160_MA45']
+    files_onZ = ['MHc100_MA95', 'MHc130_MA90', 'MHc160_MA75', 'MHc160_MA85']
+    files_aboveZ = ['MHc130_MA125', 'MHc160_MA120', 'MHc160_MA155']
+    files_onshellW = ['MHc100_MA15', 'MHc130_MA15', 'MHc130_MA45', 'MHc160_MA15', 'MHc160_MA45', 'MHc160_MA75']
+    files_offshellW_MHc70to100 = ['MHc70_MA40', 'MHc70_MA65', 'MHc100_MA25', 'MHc100_MA60', 'MHc100_MA95']
+    files_offshellW_MHc130to160 = ['MHc130_MA55', 'MHc130_MA90', 'MHc130_MA125', 'MHc160_MA85', 'MHc160_MA120', 'MHc160_MA155']
+    path = "3mu/muons_offshellW/"
     obs = "1/pt"
     cvs_params = params[obs]['cvs_params']
     hist_params = params[obs]['hist_params']
@@ -149,7 +157,7 @@ if __name__ == "__main__":
 
     # get histograms
     hists = {}
-    for name in files_MHc160:
+    for name in files_offshellW_MHc70to100:
         this_path = skflat_output + name + ".root"
         this_file = TFile(this_path)
         this_hist = this_file.Get(path + obs)
