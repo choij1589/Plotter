@@ -317,4 +317,126 @@ params = {
             "extra_text": "Work on progress"
         }
     },
+	# Jets_uncleaned
+    "ptj1_uncleaned": {
+        "cvs_params": {
+            "logy": True,
+            "grid": True
+        },
+        "hist_params": {
+            "x_title": "p_{T}(j1)",
+            "y_title": "Events",
+            "ratio_title": "x/Default",
+            "x_range": [0., 200.],
+            "ratio_range": [0., 2.0],
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+    "ptj2_uncleaned": {
+        "cvs_params": {
+            "logy": True,
+            "grid": True
+        },
+        "hist_params": {
+            "x_title": "p_{T}(j2)",
+            "y_title": "Events",
+            "ratio_title": "x/Default",
+            "x_range": [0., 200.],
+            "ratio_range": [0., 2.0],
+        },
+		"info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+    "etaj1_uncleaned": {
+        "cvs_params": {
+            "logy": False,
+            "grid": True
+        },
+        "hist_params": {
+            "x_title": "#eta(j1)",
+            "y_title": "Events",
+            "ratio_title": "x/Default",
+            "ratio_range": [0., 2.0],
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+    "etaj2_uncleaned": {
+        "cvs_params": {
+            "logy": False,
+            "grid": True
+        },
+        "hist_params": {
+            "x_title": "#eta(j2)",
+            "y_title": "Events",
+            "ratio_title": "x/Default",
+            "ratio_range": [0., 2.0],
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+	"phij1_uncleaned": {
+        "cvs_params": {
+            "logy": False,
+            "grid": True
+        },
+        "hist_params": {
+            "x_title": "#phi(j1)",
+            "y_title": "Events",
+            "ratio_title": "x/Default",
+            "ratio_range": [0., 2.0],
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+    "phij2_uncleaned": {
+        "cvs_params": {
+            "logy": False,
+            "grid": True
+        },
+        "hist_params": {
+            "x_title": "#phi(j2)",
+            "y_title": "Events",
+            "ratio_title": "x/Default",
+            "ratio_range": [0., 2.0],
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+	"nJets_uncleaned": {
+        "cvs_params": {
+            "logy": False,
+            "grid": True
+        },
+        "hist_params": {
+            "x_title": "N(j)",
+            "y_title": "Events",
+            "ratio_title": "x/Default",
+            "ratio_range": [0.0, 2.0],
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },		
 }

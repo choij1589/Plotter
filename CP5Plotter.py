@@ -72,9 +72,11 @@ observables = ["ZMass", "yZ", "ptZ", "phiZ",
 zboson = ['ZMass', 'yZ', 'ptZ', 'phiZ']
 leptons = ['ptl1', 'ptl2', 'etal1', 'etal2', 'phil1', 'phil2', 'nLeptons']
 jets = ['ptj1', 'ptj2', 'etaj1', 'etaj2', 'phij1', 'phij2', 'nJets']
+jets_uncleaned = ['ptj1_uncleaned', 'ptj2_uncleaned', 'etaj1_uncleaned', 'etaj2_uncleaned', 'phij1_uncleaned', 'phij2_uncleaned', 'nJets_uncleaned']
 lumi = 150.  # fb^-1
-selector_arg = "_prefsr"
+selector_arg = ""
 output_path = "/root/workspace/GenValidation/www/VGenStudies/DYm50_nlo_cp5/"
+#output_path = "/root/workspace/GenValidation/Plotter/Outputs/DrellYan/CP5/BareLep/"
 # get histograms
 root_files = {}
 selector_output = "/root/workspace/GenValidation/SelectorOutput/DrellYan/"
@@ -83,5 +85,5 @@ for name in file_names:
     this_path = selector_output + name + ".root"
     root_files[name] = TFile(this_path)
 
-for obs in observables:
+for obs in jets_uncleaned:
     plot_maker(obs, root_files, weights, selector_output, output_path, store_name)
