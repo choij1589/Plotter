@@ -51,7 +51,7 @@ class PlotterBase:
     def set_canvas(self):
         try:
             if self.cvs_type == "default":
-                self.cvs = TCanvas("cvs", "", 500, 500)
+                self.cvs = TCanvas("cvs", "", 700, 800)
                 if self.grid:
                     self.cvs.SetGrid()
                 if self.logy:

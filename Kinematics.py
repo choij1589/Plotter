@@ -144,13 +144,17 @@ if __name__ == "__main__":
                     'MHc130_MA55', 'MHc130_MA90', 'MHc130_MA125']
     files_MHc160 = ['MHc160_MA15', 'MHc160_MA45', 'MHc160_MA75',
                     'MHc160_MA85', 'MHc160_MA120', 'MHc160_MA155']
-    files_belowZ = ['MHc70_MA15', 'MHc70_MA40', 'MHc70_MA65', 'MHc100_MA15', 'MHc100_MA25', 'MHc100_MA60', 'MHc130_MA15', 'MHc130_MA45', 'MHc130_MA55', 'MHc160_MA15', 'MHc160_MA45']
+    files_belowZ = ['MHc70_MA15', 'MHc70_MA40', 'MHc70_MA65', 'MHc100_MA15', 'MHc100_MA25',
+                    'MHc100_MA60', 'MHc130_MA15', 'MHc130_MA45', 'MHc130_MA55', 'MHc160_MA15', 'MHc160_MA45']
     files_onZ = ['MHc100_MA95', 'MHc130_MA90', 'MHc160_MA75', 'MHc160_MA85']
     files_aboveZ = ['MHc130_MA125', 'MHc160_MA120', 'MHc160_MA155']
-    files_onshellW = ['MHc100_MA15', 'MHc130_MA15', 'MHc130_MA45', 'MHc160_MA15', 'MHc160_MA45', 'MHc160_MA75']
-    files_offshellW_MHc70to100 = ['MHc70_MA40', 'MHc70_MA65', 'MHc100_MA25', 'MHc100_MA60', 'MHc100_MA95']
-    files_offshellW_MHc130to160 = ['MHc130_MA55', 'MHc130_MA90', 'MHc130_MA125', 'MHc160_MA85', 'MHc160_MA120', 'MHc160_MA155']
-    
+    files_onshellW = ['MHc100_MA15', 'MHc130_MA15',
+                      'MHc130_MA45', 'MHc160_MA15', 'MHc160_MA45', 'MHc160_MA75']
+    files_offshellW_MHc70to100 = [
+        'MHc70_MA40', 'MHc70_MA65', 'MHc100_MA25', 'MHc100_MA60', 'MHc100_MA95']
+    files_offshellW_MHc130to160 = ['MHc130_MA55', 'MHc130_MA90',
+                                   'MHc130_MA125', 'MHc160_MA85', 'MHc160_MA120', 'MHc160_MA155']
+
     path = "3mu/bjets_cleaned/"
     obs = "MVA"
     cvs_params = params[obs]['cvs_params']
@@ -159,7 +163,7 @@ if __name__ == "__main__":
     output_path = "/root/workspace/HcToWA/Plotter/Outputs/SignalStudy/MVA/"
     # get histograms
     hists = {}
-    #for name in files_onshellW:
+    # for name in files_onshellW:
     #    this_path = skflat_output + name + ".root"
     #    this_file = TFile(this_path)
     #    this_hist = this_file.Get(path + obs)
