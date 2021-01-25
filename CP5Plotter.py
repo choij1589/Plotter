@@ -61,10 +61,10 @@ def plot_maker(obs, root_files, weights, selector_output, output_path, store_nam
 file_names = ["DYm50_012j_nlo_cp5", "DYm50_0j_nlo_cp5",
             	"DYm50_1j_nlo_cp5", "DYm50_2j_nlo_cp5"]
 weights = {
-    "DYm50_012j_nlo_cp5": 2.99030301E-03,
-    "DYm50_0j_nlo_cp5": 8.43901018E-04,
-    "DYm50_1j_nlo_cp5": 7.35992842E-04,
-    "DYm50_2j_nlo_cp5": 4.39098262E-04,
+    "DYm50_012j_nlo_cp5": 4.41132946E-03,
+    "DYm50_0j_nlo_cp5": 1.05010113E-03,
+    "DYm50_1j_nlo_cp5": 1.65502342E-03,
+    "DYm50_2j_nlo_cp5": 1.46816414E-03,
 }
 observables = ["ZMass", "yZ", "ptZ", "phiZ",
                 "ptl1", "ptl2", "etal1", "etal2", "phil1", "phil2", "nLeptons",
@@ -72,10 +72,10 @@ observables = ["ZMass", "yZ", "ptZ", "phiZ",
 zboson = ['ZMass', 'yZ', 'ptZ', 'phiZ']
 leptons = ['ptl1', 'ptl2', 'etal1', 'etal2', 'phil1', 'phil2', 'nLeptons']
 jets = ['ptj1', 'ptj2', 'etaj1', 'etaj2', 'phij1', 'phij2', 'nJets']
-jets_uncleaned = ['ptj1_uncleaned', 'ptj2_uncleaned', 'etaj1_uncleaned', 'etaj2_uncleaned', 'phij1_uncleaned', 'phij2_uncleaned', 'nJets_uncleaned']
+#jets_uncleaned = ['ptj1_uncleaned', 'ptj2_uncleaned', 'etaj1_uncleaned', 'etaj2_uncleaned', 'phij1_uncleaned', 'phij2_uncleaned', 'nJets_uncleaned']
 lumi = 150.  # fb^-1
-selector_arg = ""
-output_path = "/root/workspace/GenValidation/www/VGenStudies/DYm50_nlo_cp5/"
+selector_arg = "_prefsr"
+output_path = "/root/workspace/GenValidation/www/VGenStudies/DYm50_nlo_cp5_fixnorm/"
 #output_path = "/root/workspace/GenValidation/Plotter/Outputs/DrellYan/CP5/BareLep/"
 # get histograms
 root_files = {}
@@ -85,5 +85,5 @@ for name in file_names:
     this_path = selector_output + name + ".root"
     root_files[name] = TFile(this_path)
 
-for obs in jets_uncleaned:
+for obs in observables:
     plot_maker(obs, root_files, weights, selector_output, output_path, store_name)

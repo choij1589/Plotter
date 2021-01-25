@@ -52,11 +52,18 @@ def plot_maker(obs, root_files, weights, selector_output, output_path, store_nam
 # initial settings
 file_names = ["DYm50_012j_nlo_ewparams_cp5", "DYm50_0j_nlo_ewparams_fxfxon_cp5",
             	"DYm50_1j_nlo_ewparams_cp5", "DYm50_2j_nlo_ewparams_cp5"]
+#weights = {
+#    "DYm50_012j_nlo_ewparams_cp5": 2.80340430E-03,
+#    "DYm50_0j_nlo_ewparams_fxfxon_cp5": 9.69581073E-04,
+#    "DYm50_1j_nlo_ewparams_cp5": 7.68607325E-04,
+#    "DYm50_2j_nlo_ewparams_cp5": 4.40995922E-04,
+#}
+# these weights are based on mg265 version
 weights = {
-    "DYm50_012j_nlo_ewparams_cp5": 2.80340430E-03,
-    "DYm50_0j_nlo_ewparams_fxfxon_cp5": 9.69581073E-04,
-    "DYm50_1j_nlo_ewparams_cp5": 7.68607325E-04,
-    "DYm50_2j_nlo_ewparams_cp5": 4.40995922E-04,
+	"DYm50_012j_nlo_ewparams_cp5": 4.16501414E-03,
+	"DYm50_0j_nlo_ewparams_fxfxon_cp5": 1.08633813E-03,
+	"DYm50_1j_nlo_ewparams_cp5": 1.65633910E-03,
+	"DYm50_2j_nlo_ewparams_cp5": 1.44940980E-03
 }
 observables = ["ZMass", "yZ", "ptZ", "phiZ",
                 "ptl1", "ptl2", "etal1", "etal2", "phil1", "phil2", "nLeptons",
@@ -66,7 +73,7 @@ leptons = ['ptl1', 'ptl2', 'etal1', 'etal2', 'phil1', 'phil2', 'nLeptons']
 jets = ['ptj1', 'ptj2', 'etaj1', 'etaj2', 'phij1', 'phij2', 'nJets']
 lumi = 150.  # fb^-1
 selector_arg = "_prefsr"
-output_path = "/root/workspace/GenValidation/www/VGenStudies/DYm50_nlo_ewparams_cp5/"
+output_path = "/root/workspace/GenValidation/www/VGenStudies/DYm50_nlo_ewparams_cp5_fixnorm/"
 # get histograms
 root_files = {}
 selector_output = "/root/workspace/GenValidation/SelectorOutput/DrellYan/"
