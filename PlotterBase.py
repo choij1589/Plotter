@@ -57,7 +57,7 @@ class PlotterBase:
                 if self.logy:
                     self.cvs.SetLogy()
             elif self.cvs_type == "ratio":
-                self.cvs = TCanvas("cvs", "", 504, 560)
+                self.cvs = TCanvas("cvs", "", 800, 1000)
                 self.pad_up = TPad("pad_up", "", 0, 0.25, 1, 1)
                 self.pad_up.SetBottomMargin(0.02)
                 if self.grid:

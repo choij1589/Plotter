@@ -317,6 +317,114 @@ params = {
             "extra_text": "Work on progress"
         }
     },
+    "dRl1l2": {
+        "cvs_params": {
+            "logy": True,
+            "grid": True,
+        },
+        "hist_params": {
+            "x_title": "#Delta R(l1l2)",
+            "y_title": "Events",
+            "ratio_title": "x/Defalut",
+            "x_range": [0., 6.],
+            "ratio_range": [0.5, 1.5]
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+    "dRj1l1": {
+        "cvs_params": {
+            "logy": True,
+            "grid": True,
+        },
+        "hist_params": {
+            "x_title": "#Delta R(j1l1)",
+            "y_title": "Events",
+            "ratio_title": "x/Defalut",
+            "x_range": [0., 6.],
+            "ratio_range": [0.5, 1.5]
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+    "dRj1l2": {
+        "cvs_params": {
+            "logy": True,
+            "grid": True,
+        },
+        "hist_params": {
+            "x_title": "#Delta R(j1l2)",
+            "y_title": "Events",
+            "ratio_title": "x/Defalut",
+            "x_range": [0., 6.],
+            "ratio_range": [0.5, 1.5]
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+    "dRj2l1": {
+        "cvs_params": {
+            "logy": True,
+            "grid": True,
+        },
+        "hist_params": {
+            "x_title": "#Delta R(j2l1)",
+            "y_title": "Events",
+            "ratio_title": "x/Defalut",
+            "x_range": [0., 6.],
+            "ratio_range": [0.5, 1.5]
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+    "dRj2l2": {
+        "cvs_params": {
+            "logy": True,
+            "grid": True,
+        },
+        "hist_params": {
+            "x_title": "#Delta R(j2l2)",
+            "y_title": "Events",
+            "ratio_title": "x/Defalut",
+            "x_range": [0., 6.],
+            "ratio_range": [0.5, 1.5]
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
+    "dRj1j2": {
+        "cvs_params": {
+            "logy": True,
+            "grid": True,
+        },
+        "hist_params": {
+            "x_title": "#Delta R(j1j2)",
+            "y_title": "Events",
+            "ratio_title": "x/Defalut",
+            "x_range": [0., 6.],
+            "ratio_range": [0.5, 1.5]
+        },
+        "info_params": {
+            "info": "Normalized to #it{L}_{int} = 150 fb^{-1}",
+            "cms_text": "CMS",
+            "extra_text": "Work on progress"
+        }
+    },
 	# Jets_uncleaned
     "ptj1_uncleaned": {
         "cvs_params": {

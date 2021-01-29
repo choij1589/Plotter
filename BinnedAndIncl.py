@@ -14,7 +14,9 @@ class BinnedAndIncl(PlotterBase):
         self.__set_legend()
 
     def __set_legend(self):
-        self.legend = TLegend(0.69, 0.60, 0.90, 0.90)
+        self.legend = TLegend(0.60, 0.60, 0.90, 0.90)
+        self.legend.SetFillStyle(0)
+        self.legend.SetBorderSize(0)
 
     def get_hists(self, h_incl, hs_binned):
         # Initialize parameters
@@ -207,7 +209,7 @@ if __name__ == "__main__":
         elif selector_arg == "_prefsr":
             path = output_path + store_name + "_" + obs + "_matchedGenJet" + ".png"
         else:
-             + output_pathstore_name + "_" + obs + selector_arg + ".png"
+            + output_pathstore_name + "_" + obs + selector_arg + ".png"
         plotter.save(path)
 
     # initial settings
