@@ -125,16 +125,16 @@ def plot_maker(obs, norm):
 
 # initial settings
 files_incl = ["DYm50_MG273_012j_nlo_ewparams_cp5", "DYm50_MG265_012j_nlo_ewparams_cp5"]
-files_stitched = ["DYm50_MG273_0j_nlo_ewparams_cp5",
-                  "DYm50_MG273_1j_nlo_ewparams_cp5",
-				  "DYm50_MG273_2j_nlo_ewparams_cp5"]
+files_stitched = ["DYm50_MG265_0j_nlo_ewparams_cp5",
+                  "DYm50_MG265_1j_nlo_ewparams_cp5",
+				  "DYm50_MG265_2j_nlo_ewparams_cp5"]
 
 xsecs = {
     "DYm50_MG273_012j_nlo_ewparams_cp5": 6383.,
     "DYm50_MG265_012j_nlo_ewparams_cp5": 6383.,
-    "DYm50_MG273_0j_nlo_ewparams_cp5": 5156.,
-    "DYm50_MG273_1j_nlo_ewparams_cp5": 913.0,
-    "DYm50_MG273_2j_nlo_ewparams_cp5": 348.6
+    "DYm50_MG265_0j_nlo_ewparams_cp5": 5156.,
+    "DYm50_MG265_1j_nlo_ewparams_cp5": 913.0,
+    "DYm50_MG265_2j_nlo_ewparams_cp5": 348.6
 }
 zboson = ['ZMass', 'yZ', 'ptZ', 'phiZ']
 leptons = ['ptl1', 'ptl2', 'etal1', 'etal2', 'phil1', 'phil2', 'nLeptons']
@@ -142,8 +142,8 @@ jets = ['ptj1', 'ptj2', 'etaj1', 'etaj2', 'phij1', 'phij2', 'nJets']
 deltaR = ['dRl1l2', 'dRj1l1', 'dRj1l2', 'dRj2l1', 'dRj2l2', 'dRj1j2']
 observables = zboson + leptons + jets + deltaR
 lumi = 150.  # fb^-1
-selector_arg = ""
-output_path = "/root/workspace/GenValidation/www/VGenStudies/DYm50_MG273_nlo_ewparams_cp5_scaledWithGenWeights/"
+selector_arg = "_lhe"
+output_path = "/root/workspace/GenValidation/www/VGenStudies/DYm50_MG265_nlo_ewparams_cp5_scaledWithGenWeights/"
 # get histograms
 root_files = {}
 selector_output = "/root/workspace/GenValidation/SelectorOutput/DrellYan/"
