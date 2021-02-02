@@ -57,7 +57,7 @@ class ObsAndExp(PlotterBase):
         maximum = self.hist_obs.GetMaximum()
         y_title = self.hist_params['y_title']
         self.hist_obs.GetYaxis().SetTitle(y_title)
-        self.hist_obs.GetYaxis().SetTitleOffset(1.5)
+        self.hist_obs.GetYaxis().SetTitleOffset(1.4)
         self.hist_obs.GetYaxis().SetRangeUser(0, maximum*1.3)
         if self.logy:
             self.hist_obs.GetYaxis().SetRangeUser(1, maximum*30)
@@ -113,9 +113,10 @@ class ObsAndExp(PlotterBase):
 
         # y axis
         self.ratio.GetYaxis().SetRangeUser(ratio_range[0], ratio_range[1])
-        self.ratio.GetYaxis().SetTitle("Incl / binned")
-        self.ratio.GetYaxis().SetTitleSize(0.08)
-        self.ratio.GetYaxis().SetTitleOffset(0.5)
+        self.ratio.GetYaxis().SetTitle("Obs / Exp")
+        self.ratio.GetYaxis().CenterTitle()
+        self.ratio.GetYaxis().SetTitleSize(0.1)
+        self.ratio.GetYaxis().SetTitleOffset(0.4)
         self.ratio.GetYaxis().SetLabelSize(0.08)
 
         # ratio_syst
@@ -139,7 +140,7 @@ class ObsAndExp(PlotterBase):
         self.hist_obs.Draw("p&hist&same")
         self.hist_obs.Draw("e1&same")
         self.legend.Draw()
-        super().info().DrawLatexNDC(0.73, 0.91, info)
+        super().info().DrawLatexNDC(0.74, 0.91, info)
         super().logo().DrawLatexNDC(0.15, 0.83, cms_text)
         super().extra_logo().DrawLatexNDC(0.15, 0.78, extra_text)
 
@@ -153,7 +154,7 @@ class ObsAndExp(PlotterBase):
 
 
 if __name__ == "__main__":
-    cvs_params = {"logy": False,
+    cvs_params = {"logy": True,
                   "grid": True
                   }
     hist_params = {"x_title": "p_{T}(#mu)",
