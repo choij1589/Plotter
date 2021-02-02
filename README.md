@@ -11,7 +11,9 @@ exit()
 ### Quick Start
 Check example.py to see how the plotter works. I have put the test samples in ExampleSamples directory.
 ```
-git clone 
+GITHUB=$(Your github account)
+git clone https://github.com/$GITHUB/Plotter.git
+
 python3 example.py
 ```
 The code will make example plots in ExamplePlots directory. If you set many inclusive samples in
