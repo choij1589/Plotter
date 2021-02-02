@@ -8,19 +8,17 @@ import ROOT
 exit()
 ```
 ---
+### Quick Start
+Check example.py to see how the plotter works. I have put the test samples in ExampleSamples directory.
+```
+python3 example.py
+```
+The code will make example plots in ExamplePlots directory. If you set many inclusive samples in
+files\_incl list, than it will also draw the lines and ratios for those.
+
+---
 ### How to
-Base setting is defined in PlotterBase.py
-Extra setting is defined in $CHILDCLASS.py
-
-You should make child class in $CHILDCLASS.py, which inherited from PlotterBase
-
-Parameters are classified in three categories, cvs_params, hist_params, and info_params
-which is defined in Parameters/$child_cass_params.py
-
-In $CHILDCLASS.py, make a code to get histograms and set the output path
-TODO: add legend settings and normalization settings
-
-Finally, run
-```
-python3 $CHILDCLASS.py
-```
+To make the code more flexible, I haven't automized the codes to get histograms. It is hard to know the directory structure of TFile so user should manage to get the histograms by hands. Also, normalization is not supported in the code side. User should scale the histogram if one wants to. Please see example.py to see how it works.
+Basic settings are defined in PlotterBase.py
+Extra settings are defined in $CHILDCLASS.py. You can change some settings in $CHILDCLASS.py for your purpose. For the example in Quick Start, it used InclAndStitched.py
+To make several observalbles at one time, it is convinient to set the parameters in some place. I defined the parameters in Parameters/$PARAMETER.py. Here I define cvs\_params, hist\_params and info\_params. In the Quick Start, the code used Parameters/examples\_params.py.
