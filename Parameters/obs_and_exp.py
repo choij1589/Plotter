@@ -1,5 +1,5 @@
 cvs_params = {
-    "logy": True,
+    "logy": False,
     "grid": True
 }
 info_params = {
@@ -15,7 +15,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(#mu1)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -24,7 +25,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(#mu2)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -33,6 +35,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(#mu1)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -42,6 +45,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(#mu2)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -51,6 +55,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(#mu1)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -60,6 +65,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(#mu2)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -69,7 +75,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(j1)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -78,7 +85,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(j2)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -87,7 +95,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(j3)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -95,7 +104,8 @@ param_set = {
             "path": "/jets_cleaned/1/eta",
             "hist_params": {
                 "x_title": "#eta(j1)",
-                "x_range": [-2.7, 2.7],
+                "x_range": [-2.4, 2.4],
+                "rebin": 3,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -104,7 +114,8 @@ param_set = {
             "path": "/jets_cleaned/2/eta",
             "hist_params": {
                 "x_title": "#eta(j2)",
-                "x_range": [-2.7, 2.7],
+                "x_range": [-2.4, 2.4],
+                "rebin": 3,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -113,7 +124,8 @@ param_set = {
             "path": "/jets_cleaned/3/eta",
             "hist_params": {
                 "x_title": "#eta(j3)",
-                "x_range": [-2.7, 2.7],
+                "x_range": [-2.4, 2.4],
+                "rebin": 3,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -123,6 +135,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(j1)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -132,6 +145,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(j2)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -141,6 +155,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(j3)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -158,7 +173,9 @@ param_set = {
             "path": "/METv/pt",
             "hist_params": {
                 "x_title": "E_{T}^{miss}",
-                "y_title": "Events",
+                "x_range": [0., 150.],
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0., 2.0]
             }
         },
@@ -175,6 +192,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(E_{T}^{miss})",
                 "y_title": "Events",
+                "rebin": 2,
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -182,7 +200,8 @@ param_set = {
             "path": "/ZCand/pt",
             "hist_params": {
                 "x_title": "p_T(Z)",
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -190,6 +209,7 @@ param_set = {
             "path": "/ZCand/eta",
             "hist_params": {
                 "x_title": "#eta(Z)",
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -198,6 +218,7 @@ param_set = {
             "path": "/ZCand/phi",
             "hist_params": {
                 "x_title": "#phi(Z)",
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -218,7 +239,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(#mu1)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -227,7 +249,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(#mu2)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -236,6 +259,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(#mu1)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -245,6 +269,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(#mu2)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -254,6 +279,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(#mu1)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -263,6 +289,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(#mu2)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -272,7 +299,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(j1)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -281,7 +309,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(j2)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -290,7 +319,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(j3)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -298,7 +328,8 @@ param_set = {
             "path": "/jets_cleaned/1/eta",
             "hist_params": {
                 "x_title": "#eta(j1)",
-                "x_range": [-2.7, 2.7],
+                "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -307,7 +338,8 @@ param_set = {
             "path": "/jets_cleaned/2/eta",
             "hist_params": {
                 "x_title": "#eta(j2)",
-                "x_range": [-2.7, 2.7],
+                "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -316,7 +348,8 @@ param_set = {
             "path": "/jets_cleaned/3/eta",
             "hist_params": {
                 "x_title": "#eta(j3)",
-                "x_range": [-2.7, 2.7],
+                "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -326,6 +359,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(j1)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -335,6 +369,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(j2)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -344,6 +379,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(j3)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -362,7 +398,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(b1)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -371,7 +408,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(b2)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -380,7 +418,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(b3)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -389,6 +428,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(b1)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -398,6 +438,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(b2)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -407,6 +448,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(b3)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -416,6 +458,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(b1)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -425,6 +468,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(b2)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -434,6 +478,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(b3)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -444,14 +489,15 @@ param_set = {
                 "x_title": "N_{b}",
                 "x_range": [0, 10],
                 "y_title": "Events",
-                "ratio_range": [0., 2.]
+                "ratio_range": [0.5, 1.5]
             }
         },
         "METv": {
             "path": "/METv/pt",
             "hist_params": {
                 "x_title": "E_{T}^{miss}",
-                "y_title": "Events",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0., 2.0]
             }
         },
@@ -459,6 +505,7 @@ param_set = {
             "path": "/METv/eta",
             "hist_params": {
                 "x_title": "#eta(E_{T}^{miss})",
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0., 2.0]
             }
@@ -467,6 +514,7 @@ param_set = {
             "path": "/METv/phi",
             "hist_params": {
                 "x_title": "#phi(E_{T}^{miss})",
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -475,7 +523,8 @@ param_set = {
             "path": "/ZCand/pt",
             "hist_params": {
                 "x_title": "p_T(Z)",
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -483,6 +532,7 @@ param_set = {
             "path": "/ZCand/eta",
             "hist_params": {
                 "x_title": "#eta(Z)",
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -491,6 +541,7 @@ param_set = {
             "path": "/ZCand/phi",
             "hist_params": {
                 "x_title": "#phi(Z)",
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -511,7 +562,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(#mu1)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -520,7 +572,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(e1)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -529,6 +582,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(#mu1)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -538,6 +592,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(e1)",
                 "x_range": [-2.5, 2.5],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -547,6 +602,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(#mu1)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -556,6 +612,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(e1)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -565,7 +622,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(j1)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -574,7 +632,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(j2)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -583,7 +642,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(j3)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -592,6 +652,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(j1)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -601,6 +662,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(j2)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -610,6 +672,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(j3)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -619,6 +682,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(j1)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -628,6 +692,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(j2)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -637,6 +702,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(j3)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -647,7 +713,7 @@ param_set = {
                 "x_title": "N_{j}",
                 "x_range": [0, 10],
                 "y_title": "Events",
-                "ratio_range": [0., 2.]
+                "ratio_range": [0.5, 1.5]
             }
         },
         "ptb1": {
@@ -655,7 +721,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(b1)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -664,7 +731,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(b2)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -673,7 +741,8 @@ param_set = {
             "hist_params": {
                 "x_title": "p_{T}(b3)",
                 "x_range": [0., 200.],
-                "y_title": "Events / GeV",
+                "rebin": 5,
+                "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
         },
@@ -682,6 +751,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(b1)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -691,6 +761,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(b2)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -700,6 +771,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(b3)",
                 "x_range": [-2.4, 2.4],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -709,6 +781,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(b1)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -718,6 +791,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(b2)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -727,6 +801,7 @@ param_set = {
             "hist_params": {
                 "x_title": "#phi(b3)",
                 "x_range": [-3.2, 3.2],
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
@@ -737,15 +812,16 @@ param_set = {
                 "x_title": "N_{b}",
                 "x_range": [0, 10],
                 "y_title": "Events",
-                "ratio_range": [0., 2.]
+                "ratio_range": [0.5, 1.5]
             }
         },
         "METv": {
             "path": "/METv/pt",
             "hist_params": {
                 "x_title": "E_{T}^{miss}",
-                "y_title": "Events",
-                "ratio_range": [0., 2.0]
+                "rebin": 5,
+                "y_title": "Events/ 5 GeV",
+                "ratio_range": [0.5, 1.5]
             }
         },
         "etaMETv": {
@@ -753,13 +829,14 @@ param_set = {
             "hist_params": {
                 "x_title": "#eta(E_{T}^{miss})",
                 "y_title": "Events",
-                "ratio_range": [0., 2.0]
+                "ratio_range": [0.5, 1.5]
             }
         },
         "phiMETv": {
             "path": "/METv/phi",
             "hist_params": {
                 "x_title": "#phi(E_{T}^{miss})",
+                "rebin": 2,
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }

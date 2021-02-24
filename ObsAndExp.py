@@ -64,7 +64,7 @@ class ObsAndExp(PlotterBase):
 
         # style
         self.hist_obs.SetMarkerStyle(8)
-        self.hist_obs.SetMarkerSize(0.5)
+        self.hist_obs.SetMarkerSize(0.8)
         self.hist_obs.SetMarkerColor(1)
 
         # add to legend
@@ -143,10 +143,12 @@ class ObsAndExp(PlotterBase):
         super().info().DrawLatexNDC(0.74, 0.91, info)
         super().logo().DrawLatexNDC(0.15, 0.83, cms_text)
         super().extra_logo().DrawLatexNDC(0.15, 0.78, extra_text)
+        super().pad_up().RedrawAxis()
 
         super().pad_down().cd()
         self.ratio.Draw("p & hist")
         self.ratio_syst.Draw("e2&f&same")
+        super().pad_down().RedrawAxis()
 
         super().cvs().cd()
         super().pad_up().Draw()

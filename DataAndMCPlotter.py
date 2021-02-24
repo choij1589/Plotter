@@ -47,12 +47,12 @@ observables = {
 
 if __name__ == "__main__":
     analyzer = "Preselection"
-    syst = "RunLowPtJet__"
+    syst = "VetoLeptons__"
     data = "MuonEG"
     year = "2017"
-    #mcsamples = ["fake", "VV", "SingleTop", "TTLL", "DY"]
-    mcsamples = ["fake", "rare", "VV", "ttX"]
-    channel = "Pre_1e2mu"
+    mcsamples = ["fake", "VV", "SingleTop", "TTLL", "DY"]
+    #mcsamples = ["fake", "rare", "VV", "ttX"]
+    channel = "TT_emu"
     skflat_output = "/data0/HcToWA/"+analyzer+"/"+syst+"/"+year
     output_path = "Outputs/Preselection/"+syst
 
@@ -76,10 +76,10 @@ if __name__ == "__main__":
 
         for sample in mcsamples:
             if sample == "TTLL":
-                file = TFile(skflat_output+"/TriLepSamples/" +
+                file = TFile(skflat_output+"/DiLepSamples/" +
                              analyzer + "_TTLL_powheg.root")
             else:
-                file = TFile(skflat_output+"/TriLepSamples/" +
+                file = TFile(skflat_output+"/DiLepSamples/" +
                              analyzer+"_"+sample+".root")
             hist = file.Get(path_to_hist)
             hist.SetDirectory(0)
@@ -89,5 +89,5 @@ if __name__ == "__main__":
         plotter.get_hists(hist_obs, hists_exp)
         plotter.combine()
         save_name = output_path + "/" + channel + "/DataAndMC_" + \
-            channel + "_" + obs + "_log.png"
+            channel + "_" + obs + ".png"
         plotter.save(save_name)
