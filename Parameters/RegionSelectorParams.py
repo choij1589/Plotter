@@ -1,15 +1,15 @@
 cvs_params = {
     "logy": True,
-    "grid": True
+    "grid": True,
 }
 info_params = {
     "info": "L^{int} = 41.5 fb^{-1}",
     "cms_text": "CMS",
-    "extra_text": "Work on progress"
+    "extra_text": "Preliminary"
 }
 
 param_set = {
-    "DY_dimu": {
+    "DY_OSdimu": {
         "ptmu1": {
             "path": "/muons_tight/1/pt",
             "hist_params": {
@@ -17,7 +17,7 @@ param_set = {
                 "x_range": [0., 200.],
                 "rebin": 5,
                 "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
+                "ratio_range": [0.5, 1.5] 
             }
         },
         "ptmu2": {
@@ -27,7 +27,7 @@ param_set = {
                 "x_range": [0., 200.],
                 "rebin": 5,
                 "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
+                "ratio_range": [0.5, 1.5] 
             }
         },
         "etamu1": {
@@ -37,7 +37,7 @@ param_set = {
                 "x_range": [-2.4, 2.4],
                 "rebin": 2,
                 "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
+                "ratio_range": [0.5, 1.5] 
             }
         },
         "etamu2": {
@@ -47,7 +47,7 @@ param_set = {
                 "x_range": [-2.4, 2.4],
                 "rebin": 2,
                 "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
+                "ratio_range": [0.5, 1.5] 
             }
         },
         "phimu1": {
@@ -71,7 +71,7 @@ param_set = {
             }
         },
         "ptj1": {
-            "path": "/jets_cleaned/1/pt",
+            "path": "/jets_lepVeto/1/pt",
             "hist_params": {
                 "x_title": "p_{T}(j1)",
                 "x_range": [0., 200.],
@@ -81,7 +81,7 @@ param_set = {
             }
         },
         "ptj2": {
-            "path": "/jets_cleaned/2/pt",
+            "path": "/jets_lepVeto/2/pt",
             "hist_params": {
                 "x_title": "p_{T}(j2)",
                 "x_range": [0., 200.],
@@ -91,7 +91,7 @@ param_set = {
             }
         },
         "ptj3": {
-            "path": "/jets_cleaned/3/pt",
+            "path": "/jets_lepVeto/3/pt",
             "hist_params": {
                 "x_title": "p_{T}(j3)",
                 "x_range": [0., 200.],
@@ -101,7 +101,7 @@ param_set = {
             }
         },
         "etaj1": {
-            "path": "/jets_cleaned/1/eta",
+            "path": "/jets_lepVeto/1/eta",
             "hist_params": {
                 "x_title": "#eta(j1)",
                 "x_range": [-2.4, 2.4],
@@ -111,7 +111,7 @@ param_set = {
             }
         },
         "etaj2": {
-            "path": "/jets_cleaned/2/eta",
+            "path": "/jets_lepVeto/2/eta",
             "hist_params": {
                 "x_title": "#eta(j2)",
                 "x_range": [-2.4, 2.4],
@@ -121,7 +121,7 @@ param_set = {
             }
         },
         "etaj3": {
-            "path": "/jets_cleaned/3/eta",
+            "path": "/jets_lepVeto/3/eta",
             "hist_params": {
                 "x_title": "#eta(j3)",
                 "x_range": [-2.4, 2.4],
@@ -131,7 +131,7 @@ param_set = {
             }
         },
         "phij1": {
-            "path": "/jets_cleaned/1/phi",
+            "path": "/jets_lepVeto/1/phi",
             "hist_params": {
                 "x_title": "#phi(j1)",
                 "x_range": [-3.2, 3.2],
@@ -141,7 +141,7 @@ param_set = {
             }
         },
         "phij2": {
-            "path": "/jets_cleaned/2/phi",
+            "path": "/jets_lepVeto/2/phi",
             "hist_params": {
                 "x_title": "#phi(j2)",
                 "x_range": [-3.2, 3.2],
@@ -151,7 +151,7 @@ param_set = {
             }
         },
         "phij3": {
-            "path": "/jets_cleaned/3/phi",
+            "path": "/jets_lepVeto/3/phi",
             "hist_params": {
                 "x_title": "#phi(j3)",
                 "x_range": [-3.2, 3.2],
@@ -161,7 +161,7 @@ param_set = {
             }
         },
         "nJets": {
-            "path": "/jets_cleaned/size",
+            "path": "/jets_lepVeto/size",
             "hist_params": {
                 "x_title": "N_{j}",
                 "x_range": [0, 10],
@@ -176,14 +176,6 @@ param_set = {
                 "x_range": [0., 150.],
                 "rebin": 5,
                 "y_title": "Events / 5 GeV",
-                "ratio_range": [0., 2.0]
-            }
-        },
-        "etaMETv": {
-            "path": "/METv/eta",
-            "hist_params": {
-                "x_title": "#eta(E_{T}^{miss})",
-                "y_title": "Events",
                 "ratio_range": [0., 2.0]
             }
         },
@@ -233,7 +225,7 @@ param_set = {
             }
         }
     },
-    "TT_dimu": {
+    "TT_OSdimu": {
         "ptmu1": {
             "path": "/muons_tight/1/pt",
             "hist_params": {
@@ -295,7 +287,7 @@ param_set = {
             }
         },
         "ptj1": {
-            "path": "/jets_cleaned/1/pt",
+            "path": "/jets_lepVeto/1/pt",
             "hist_params": {
                 "x_title": "p_{T}(j1)",
                 "x_range": [0., 200.],
@@ -305,7 +297,7 @@ param_set = {
             }
         },
         "ptj2": {
-            "path": "/jets_cleaned/2/pt",
+            "path": "/jets_lepVeto/2/pt",
             "hist_params": {
                 "x_title": "p_{T}(j2)",
                 "x_range": [0., 200.],
@@ -315,7 +307,7 @@ param_set = {
             }
         },
         "ptj3": {
-            "path": "/jets_cleaned/3/pt",
+            "path": "/jets_lepVeto/3/pt",
             "hist_params": {
                 "x_title": "p_{T}(j3)",
                 "x_range": [0., 200.],
@@ -325,7 +317,7 @@ param_set = {
             }
         },
         "etaj1": {
-            "path": "/jets_cleaned/1/eta",
+            "path": "/jets_lepVeto/1/eta",
             "hist_params": {
                 "x_title": "#eta(j1)",
                 "x_range": [-2.4, 2.4],
@@ -335,7 +327,7 @@ param_set = {
             }
         },
         "etaj2": {
-            "path": "/jets_cleaned/2/eta",
+            "path": "/jets_lepVeto/2/eta",
             "hist_params": {
                 "x_title": "#eta(j2)",
                 "x_range": [-2.4, 2.4],
@@ -345,7 +337,7 @@ param_set = {
             }
         },
         "etaj3": {
-            "path": "/jets_cleaned/3/eta",
+            "path": "/jets_lepVeto/3/eta",
             "hist_params": {
                 "x_title": "#eta(j3)",
                 "x_range": [-2.4, 2.4],
@@ -355,7 +347,7 @@ param_set = {
             }
         },
         "phij1": {
-            "path": "/jets_cleaned/1/phi",
+            "path": "/jets_lepVeto/1/phi",
             "hist_params": {
                 "x_title": "#phi(j1)",
                 "x_range": [-3.2, 3.2],
@@ -365,7 +357,7 @@ param_set = {
             }
         },
         "phij2": {
-            "path": "/jets_cleaned/2/phi",
+            "path": "/jets_lepVeto/2/phi",
             "hist_params": {
                 "x_title": "#phi(j2)",
                 "x_range": [-3.2, 3.2],
@@ -375,7 +367,7 @@ param_set = {
             }
         },
         "phij3": {
-            "path": "/jets_cleaned/3/phi",
+            "path": "/jets_lepVeto/3/phi",
             "hist_params": {
                 "x_title": "#phi(j3)",
                 "x_range": [-3.2, 3.2],
@@ -385,7 +377,7 @@ param_set = {
             }
         },
         "nJets": {
-            "path": "/jets_cleaned/size",
+            "path": "/jets_lepVeto/size",
             "hist_params": {
                 "x_title": "N_{j}",
                 "x_range": [0, 10],
@@ -394,7 +386,7 @@ param_set = {
             }
         },
         "ptb1": {
-            "path": "/bjets_cleaned/1/pt",
+            "path": "/bjets_lepVeto/1/pt",
             "hist_params": {
                 "x_title": "p_{T}(b1)",
                 "x_range": [0., 200.],
@@ -404,7 +396,7 @@ param_set = {
             }
         },
         "ptb2": {
-            "path": "/bjets_cleaned/2/pt",
+            "path": "/bjets_lepVeto/2/pt",
             "hist_params": {
                 "x_title": "p_{T}(b2)",
                 "x_range": [0., 200.],
@@ -414,7 +406,7 @@ param_set = {
             }
         },
         "ptb3": {
-            "path": "/bjets_cleaned/3/pt",
+            "path": "/bjets_lepVeto/3/pt",
             "hist_params": {
                 "x_title": "p_{T}(b3)",
                 "x_range": [0., 200.],
@@ -424,7 +416,7 @@ param_set = {
             }
         },
         "etab1": {
-            "path": "/bjets_cleaned/1/eta",
+            "path": "/bjets_lepVeto/1/eta",
             "hist_params": {
                 "x_title": "#eta(b1)",
                 "x_range": [-2.4, 2.4],
@@ -434,7 +426,7 @@ param_set = {
             }
         },
         "etab2": {
-            "path": "/bjets_cleaned/2/eta",
+            "path": "/bjets_lepVeto/2/eta",
             "hist_params": {
                 "x_title": "#eta(b2)",
                 "x_range": [-2.4, 2.4],
@@ -444,7 +436,7 @@ param_set = {
             }
         },
         "etab3": {
-            "path": "/bjets_cleaned/3/eta",
+            "path": "/bjets_lepVeto/3/eta",
             "hist_params": {
                 "x_title": "#eta(b3)",
                 "x_range": [-2.4, 2.4],
@@ -454,7 +446,7 @@ param_set = {
             }
         },
         "phib1": {
-            "path": "/bjets_cleaned/1/phi",
+            "path": "/bjets_lepVeto/1/phi",
             "hist_params": {
                 "x_title": "#phi(b1)",
                 "x_range": [-3.2, 3.2],
@@ -464,7 +456,7 @@ param_set = {
             }
         },
         "phib2": {
-            "path": "/bjets_cleaned/2/phi",
+            "path": "/bjets_lepVeto/2/phi",
             "hist_params": {
                 "x_title": "#phi(b2)",
                 "x_range": [-3.2, 3.2],
@@ -474,7 +466,7 @@ param_set = {
             }
         },
         "phib3": {
-            "path": "/bjets_cleaned/3/phi",
+            "path": "/bjets_lepVeto/3/phi",
             "hist_params": {
                 "x_title": "#phi(b3)",
                 "x_range": [-3.2, 3.2],
@@ -484,7 +476,7 @@ param_set = {
             }
         },
         "nBJets": {
-            "path": "/bjets_cleaned/size",
+            "path": "/bjets_lepVeto/size",
             "hist_params": {
                 "x_title": "N_{b}",
                 "x_range": [0, 10],
@@ -498,15 +490,6 @@ param_set = {
                 "x_title": "E_{T}^{miss}",
                 "rebin": 5,
                 "y_title": "Events / 5 GeV",
-                "ratio_range": [0., 2.0]
-            }
-        },
-        "etaMETv": {
-            "path": "/METv/eta",
-            "hist_params": {
-                "x_title": "#eta(E_{T}^{miss})",
-                "rebin": 2,
-                "y_title": "Events",
                 "ratio_range": [0., 2.0]
             }
         },
@@ -556,7 +539,7 @@ param_set = {
             }
         }
     },
-    "TT_emu": {
+    "TT_OSemu": {
         "ptmu1": {
             "path": "/muons_tight/1/pt",
             "hist_params": {
@@ -618,7 +601,7 @@ param_set = {
             }
         },
         "ptj1": {
-            "path": "/jets_cleaned/1/pt",
+            "path": "/jets_lepVeto/1/pt",
             "hist_params": {
                 "x_title": "p_{T}(j1)",
                 "x_range": [0., 200.],
@@ -628,7 +611,7 @@ param_set = {
             }
         },
         "ptj2": {
-            "path": "/jets_cleaned/2/pt",
+            "path": "/jets_lepVeto/2/pt",
             "hist_params": {
                 "x_title": "p_{T}(j2)",
                 "x_range": [0., 200.],
@@ -638,7 +621,7 @@ param_set = {
             }
         },
         "ptj3": {
-            "path": "/jets_cleaned/3/pt",
+            "path": "/jets_lepVeto/3/pt",
             "hist_params": {
                 "x_title": "p_{T}(j3)",
                 "x_range": [0., 200.],
@@ -648,7 +631,7 @@ param_set = {
             }
         },
         "etaj1": {
-            "path": "/jets_cleaned/1/eta",
+            "path": "/jets_lepVeto/1/eta",
             "hist_params": {
                 "x_title": "#eta(j1)",
                 "x_range": [-2.4, 2.4],
@@ -658,7 +641,7 @@ param_set = {
             }
         },
         "etaj2": {
-            "path": "/jets_cleaned/2/eta",
+            "path": "/jets_lepVeto/2/eta",
             "hist_params": {
                 "x_title": "#eta(j2)",
                 "x_range": [-2.4, 2.4],
@@ -668,7 +651,7 @@ param_set = {
             }
         },
         "etaj3": {
-            "path": "/jets_cleaned/3/eta",
+            "path": "/jets_lepVeto/3/eta",
             "hist_params": {
                 "x_title": "#eta(j3)",
                 "x_range": [-2.4, 2.4],
@@ -678,7 +661,7 @@ param_set = {
             }
         },
         "phij1": {
-            "path": "/jets_cleaned/1/phi",
+            "path": "/jets_lepVeto/1/phi",
             "hist_params": {
                 "x_title": "#phi(j1)",
                 "x_range": [-3.2, 3.2],
@@ -688,7 +671,7 @@ param_set = {
             }
         },
         "phij2": {
-            "path": "/jets_cleaned/2/phi",
+            "path": "/jets_lepVeto/2/phi",
             "hist_params": {
                 "x_title": "#phi(j2)",
                 "x_range": [-3.2, 3.2],
@@ -698,7 +681,7 @@ param_set = {
             }
         },
         "phij3": {
-            "path": "/jets_cleaned/3/phi",
+            "path": "/jets_lepVeto/3/phi",
             "hist_params": {
                 "x_title": "#phi(j3)",
                 "x_range": [-3.2, 3.2],
@@ -708,7 +691,7 @@ param_set = {
             }
         },
         "nJets": {
-            "path": "/jets_cleaned/size",
+            "path": "/jets_lepVeto/size",
             "hist_params": {
                 "x_title": "N_{j}",
                 "x_range": [0, 10],
@@ -717,7 +700,7 @@ param_set = {
             }
         },
         "ptb1": {
-            "path": "/bjets_cleaned/1/pt",
+            "path": "/bjets_lepVeto/1/pt",
             "hist_params": {
                 "x_title": "p_{T}(b1)",
                 "x_range": [0., 200.],
@@ -727,7 +710,7 @@ param_set = {
             }
         },
         "ptb2": {
-            "path": "/bjets_cleaned/2/pt",
+            "path": "/bjets_lepVeto/2/pt",
             "hist_params": {
                 "x_title": "p_{T}(b2)",
                 "x_range": [0., 200.],
@@ -737,7 +720,7 @@ param_set = {
             }
         },
         "ptb3": {
-            "path": "/bjets_cleaned/3/pt",
+            "path": "/bjets_lepVeto/3/pt",
             "hist_params": {
                 "x_title": "p_{T}(b3)",
                 "x_range": [0., 200.],
@@ -747,7 +730,7 @@ param_set = {
             }
         },
         "etab1": {
-            "path": "/bjets_cleaned/1/eta",
+            "path": "/bjets_lepVeto/1/eta",
             "hist_params": {
                 "x_title": "#eta(b1)",
                 "x_range": [-2.4, 2.4],
@@ -757,7 +740,7 @@ param_set = {
             }
         },
         "etab2": {
-            "path": "/bjets_cleaned/2/eta",
+            "path": "/bjets_lepVeto/2/eta",
             "hist_params": {
                 "x_title": "#eta(b2)",
                 "x_range": [-2.4, 2.4],
@@ -767,7 +750,7 @@ param_set = {
             }
         },
         "etab3": {
-            "path": "/bjets_cleaned/3/eta",
+            "path": "/bjets_lepVeto/3/eta",
             "hist_params": {
                 "x_title": "#eta(b3)",
                 "x_range": [-2.4, 2.4],
@@ -777,7 +760,7 @@ param_set = {
             }
         },
         "phib1": {
-            "path": "/bjets_cleaned/1/phi",
+            "path": "/bjets_lepVeto/1/phi",
             "hist_params": {
                 "x_title": "#phi(b1)",
                 "x_range": [-3.2, 3.2],
@@ -787,7 +770,7 @@ param_set = {
             }
         },
         "phib2": {
-            "path": "/bjets_cleaned/2/phi",
+            "path": "/bjets_lepVeto/2/phi",
             "hist_params": {
                 "x_title": "#phi(b2)",
                 "x_range": [-3.2, 3.2],
@@ -797,7 +780,7 @@ param_set = {
             }
         },
         "phib3": {
-            "path": "/bjets_cleaned/3/phi",
+            "path": "/bjets_lepVeto/3/phi",
             "hist_params": {
                 "x_title": "#phi(b3)",
                 "x_range": [-3.2, 3.2],
@@ -807,7 +790,7 @@ param_set = {
             }
         },
         "nBJets": {
-            "path": "/bjets_cleaned/size",
+            "path": "/bjets_lepVeto/size",
             "hist_params": {
                 "x_title": "N_{b}",
                 "x_range": [0, 10],
@@ -824,14 +807,6 @@ param_set = {
                 "ratio_range": [0.5, 1.5]
             }
         },
-        "etaMETv": {
-            "path": "/METv/eta",
-            "hist_params": {
-                "x_title": "#eta(E_{T}^{miss})",
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
         "phiMETv": {
             "path": "/METv/phi",
             "hist_params": {
@@ -842,7 +817,7 @@ param_set = {
             }
         }
     },
-    "Pre_3mu": {
+    "WZ_3mu": {
         "ptmu1": {
             "path": "/muons_tight/1/pt",
             "hist_params": {
@@ -880,7 +855,7 @@ param_set = {
                 "x_title": "#eta(#mu1)",
                 "x_range": [-2.4, 2.4],
                 "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
+                "ratio_range": [0.5, 1.5] 
             }
         },
         "etamu2": {
@@ -934,7 +909,7 @@ param_set = {
             }
         },
         "ptj1": {
-            "path": "/jets_cleaned/1/pt",
+            "path": "/jets_lepVeto/1/pt",
             "hist_params": {
                 "rebin": 5,
                 "x_title": "p_{T}(j1)",
@@ -943,28 +918,8 @@ param_set = {
                 "ratio_range": [0.5, 1.5]
             }
         },
-        "ptj2": {
-            "path": "/jets_cleaned/2/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(j2)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "ptj3": {
-            "path": "/jets_cleaned/3/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(j3)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
         "etaj1": {
-            "path": "/jets_cleaned/1/eta",
+            "path": "/jets_lepVeto/1/eta",
             "hist_params": {
                 "rebin": 6,
                 "x_title": "#eta(j1)",
@@ -973,28 +928,8 @@ param_set = {
                 "ratio_range": [0.5, 1.5]
             }
         },
-        "etaj2": {
-            "path": "/jets_cleaned/2/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(j2)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "etaj3": {
-            "path": "/jets_cleaned/3/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(j3)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
         "phij1": {
-            "path": "/jets_cleaned/1/phi",
+            "path": "/jets_lepVeto/1/phi",
             "hist_params": {
                 "rebin": 4,
                 "x_title": "#phi(j1)",
@@ -1003,28 +938,8 @@ param_set = {
                 "ratio_range": [0.5, 1.5]
             }
         },
-        "phij2": {
-            "path": "/jets_cleaned/2/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(j2)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "phij3": {
-            "path": "/jets_cleaned/3/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(j3)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
         "nJets": {
-            "path": "/jets_cleaned/size",
+            "path": "/jets_lepVeto/size",
             "hist_params": {
                 "x_title": "N_{j}",
                 "x_range": [0, 10],
@@ -1032,98 +947,8 @@ param_set = {
                 "ratio_range": [0., 2.]
             }
         },
-        "ptb1": {
-            "path": "/bjets_cleaned/1/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(b1)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "ptb2": {
-            "path": "/bjets_cleaned/2/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(b2)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "ptb3": {
-            "path": "/bjets_cleaned/3/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(b3)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "etab1": {
-            "path": "/bjets_cleaned/1/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(b1)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "etab2": {
-            "path": "/bjets_cleaned/2/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(b2)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "etab3": {
-            "path": "/bjets_cleaned/3/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(b3)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "phib1": {
-            "path": "/bjets_cleaned/1/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(b1)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "phib2": {
-            "path": "/bjets_cleaned/2/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(b2)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "phib3": {
-            "path": "/bjets_cleaned/3/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(b3)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
         "nBJets": {
-            "path": "/bjets_cleaned/size",
+            "path": "/bjets_lepVeto/size",
             "hist_params": {
                 "x_title": "N_{b}",
                 "x_range": [0, 10],
@@ -1141,15 +966,6 @@ param_set = {
                 "ratio_range": [0., 2.0]
             }
         },
-        "etaMETv": {
-            "path": "/METv/eta",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#eta(E_{T}^{miss})",
-                "y_title": "Events",
-                "ratio_range": [0., 2.0]
-            }
-        },
         "phiMETv": {
             "path": "/METv/phi",
             "hist_params": {
@@ -1158,9 +974,9 @@ param_set = {
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
-        },
+        }
     },
-    "Pre_1e2mu": {
+    "WZ_1e2mu": {
         "ptmu1": {
             "path": "/muons_tight/1/pt",
             "hist_params": {
@@ -1185,8 +1001,8 @@ param_set = {
             "path": "/electrons_tight/1/pt",
             "hist_params": {
                 "rebin": 5,
-                "x_title": "p_{T}(e1)",
-                "x_range": [0., 200.],
+                "x_title": "p_{T}(e)",
+                "x_range": [0., 150.],
                 "y_title": "Events / 5 GeV",
                 "ratio_range": [0.5, 1.5]
             }
@@ -1215,7 +1031,7 @@ param_set = {
             "path": "/electrons_tight/1/eta",
             "hist_params": {
                 "rebin": 5,
-                "x_title": "#eta(e1)",
+                "x_title": "#eta(e)",
                 "x_range": [-2.5, 2.5],
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
@@ -1245,14 +1061,14 @@ param_set = {
             "path": "/electrons_tight/1/phi",
             "hist_params": {
                 "rebin": 4,
-                "x_title": "#phi(e1)",
+                "x_title": "#phi(e)",
                 "x_range": [-3.2, 3.2],
                 "y_title": "Events",
                 "ratio_range": [0.5, 1.5]
             }
         },
         "ptj1": {
-            "path": "/jets_cleaned/1/pt",
+            "path": "/jets_lepVeto/1/pt",
             "hist_params": {
                 "rebin": 5,
                 "x_title": "p_{T}(j1)",
@@ -1261,28 +1077,8 @@ param_set = {
                 "ratio_range": [0.5, 1.5]
             }
         },
-        "ptj2": {
-            "path": "/jets_cleaned/2/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(j2)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "ptj3": {
-            "path": "/jets_cleaned/3/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(j3)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
         "etaj1": {
-            "path": "/jets_cleaned/1/eta",
+            "path": "/jets_lepVeto/1/eta",
             "hist_params": {
                 "rebin": 6,
                 "x_title": "#eta(j1)",
@@ -1291,28 +1087,8 @@ param_set = {
                 "ratio_range": [0.5, 1.5]
             }
         },
-        "etaj2": {
-            "path": "/jets_cleaned/2/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(j2)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "etaj3": {
-            "path": "/jets_cleaned/3/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(j3)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
         "phij1": {
-            "path": "/jets_cleaned/1/phi",
+            "path": "/jets_lepVeto/1/phi",
             "hist_params": {
                 "rebin": 4,
                 "x_title": "#phi(j1)",
@@ -1321,28 +1097,8 @@ param_set = {
                 "ratio_range": [0.5, 1.5]
             }
         },
-        "phij2": {
-            "path": "/jets_cleaned/2/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(j2)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "phij3": {
-            "path": "/jets_cleaned/3/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(j3)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
         "nJets": {
-            "path": "/jets_cleaned/size",
+            "path": "/jets_lepVeto/size",
             "hist_params": {
                 "x_title": "N_{j}",
                 "x_range": [0, 10],
@@ -1350,98 +1106,8 @@ param_set = {
                 "ratio_range": [0., 2.]
             }
         },
-        "ptb1": {
-            "path": "/bjets_cleaned/1/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(b1)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "ptb2": {
-            "path": "/bjets_cleaned/2/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(b2)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "ptb3": {
-            "path": "/bjets_cleaned/3/pt",
-            "hist_params": {
-                "rebin": 5,
-                "x_title": "p_{T}(b3)",
-                "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "etab1": {
-            "path": "/bjets_cleaned/1/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(b1)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "etab2": {
-            "path": "/bjets_cleaned/2/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(b2)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "etab3": {
-            "path": "/bjets_cleaned/3/eta",
-            "hist_params": {
-                "rebin": 6,
-                "x_title": "#eta(b3)",
-                "x_range": [-2.4, 2.4],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "phib1": {
-            "path": "/bjets_cleaned/1/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(b1)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "phib2": {
-            "path": "/bjets_cleaned/2/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(b2)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
-        "phib3": {
-            "path": "/bjets_cleaned/3/phi",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#phi(b3)",
-                "x_range": [-3.2, 3.2],
-                "y_title": "Events",
-                "ratio_range": [0.5, 1.5]
-            }
-        },
         "nBJets": {
-            "path": "/bjets_cleaned/size",
+            "path": "/bjets_lepVeto/size",
             "hist_params": {
                 "x_title": "N_{b}",
                 "x_range": [0, 10],
@@ -1455,16 +1121,7 @@ param_set = {
                 "rebin": 5,
                 "x_title": "E_{T}^{miss}",
                 "x_range": [0., 200.],
-                "y_title": "Events / 5 GeV",
-                "ratio_range": [0., 2.0]
-            }
-        },
-        "etaMETv": {
-            "path": "/METv/eta",
-            "hist_params": {
-                "rebin": 4,
-                "x_title": "#eta(E_{T}^{miss})",
-                "y_title": "Events",
+                "y_title": "Events/ 5 GeV",
                 "ratio_range": [0., 2.0]
             }
         },
@@ -1477,5 +1134,9 @@ param_set = {
                 "ratio_range": [0.5, 1.5]
             }
         }
+    },
+    "SR_3mu": {
+    },
+    "SR_1e2mu": {
     }
 }
