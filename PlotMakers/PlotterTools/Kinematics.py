@@ -1,6 +1,5 @@
 from ROOT import TFile, TLegend, TH1D, THStack
-from Plotter.PlotterTools.PlotterBase import PlotterBase
-
+from PlotterTools.PlotterBase import PlotterBase
 
 class Kinematics(PlotterBase):
     def __init__(self, cvs_params, hist_params, info_params):
@@ -19,17 +18,17 @@ class Kinematics(PlotterBase):
         self.total = None
 
         for name, hist in h_sigs.items():
-            # hist.Scale(1./hist.Integral())
+            #hist.Scale(1./hist.Integral())
             self.h_sigs[name] = hist
-
         for hist in h_bkgs.values():
             if self.total == None:
                 self.total = hist.Clone("temp")
             else:
                 self.total.Add(hist)
         for name, hist in h_bkgs.items():
-            # hist.Scale(1./total.Integral())
+            #hist.Scale(1./total.Integral())
             self.h_bkgs[name] = hist
+
 
         self.__decorate_hists()
         self.__stack_and_syst()
@@ -56,7 +55,7 @@ class Kinematics(PlotterBase):
         super().extra_logo().DrawLatexNDC(0.15, 0.80, extra_text)
 
     def __set_legend(self):
-        self.legend = TLegend(0.6, 0.5, 0.9, 0.87)
+        self.legend = TLegend(0.65, 0.6, 0.9, 0.87)
         self.legend.SetFillStyle(0)
         self.legend.SetBorderSize(0)
 
@@ -81,15 +80,16 @@ class Kinematics(PlotterBase):
             for hist in self.h_sigs.values():
                 hist.GetXaxis().SetRangeUser(x_range[0], x_range[1])
                 hist.GetXaxis().SetTitle(self.hist_params['x_title'])
-                # hist.GetXaxis().SetTitleSize(0.04)
+                #hist.GetXaxis().SetTitleSize(0.04)
                 hist.GetXaxis().SetTitleOffset(1.0)
                 hist.GetXaxis().SetLabelSize(0.04)
             for hist in self.h_bkgs.values():
                 hist.GetXaxis().SetRangeUser(x_range[0], x_range[1])
                 hist.GetXaxis().SetTitle(self.hist_params['x_title'])
-                # hist.GetXaxis().SetTitleSize(0.04)
+                #hist.GetXaxis().SetTitleSize(0.04)
                 hist.GetXaxis().SetTitleOffset(1.0)
                 hist.GetXaxis().SetLabelSize(0.04)
+
 
         # y axis and style
         print("INFO: Automatically set y axis range")
@@ -98,12 +98,11 @@ class Kinematics(PlotterBase):
             maximum = max(maximum, hist.GetMaximum())
         for hist in self.h_bkgs.values():
             maximum = max(maximum, hist.GetMaximum())
-        colors = [2, 4, 8, 3, 9]
-        idx = 0
+        colors = [3, 4, 6, 7, 8, 9, 10]; idx = 0;
         for name, hist in self.h_sigs.items():
             hist.GetYaxis().SetTitle(self.hist_params['y_title'])
             hist.GetYaxis().SetTitleOffset(1.4)
-            hist.GetYaxis().SetRangeUser(0, maximum*1.6)
+            hist.GetYaxis().SetRangeUser(0, maximum*1.4)
             if self.logy:
                 hist.GetYaxis().SetRangeUser(1, maximum*30)
             hist.SetLineColor(colors[idx])
@@ -113,7 +112,7 @@ class Kinematics(PlotterBase):
         for name, hist in self.h_bkgs.items():
             hist.GetYaxis().SetTitle(self.hist_params['y_title'])
             hist.GetYaxis().SetTitleOffset(1.4)
-            hist.GetYaxis().SetRangeUser(0, maximum*1.6)
+            hist.GetYaxis().SetRangeUser(0, maximum*1.4)
             if self.logy:
                 hist.GetYaxis().SetRangeUser(1, maximum*30)
             self.legend.AddEntry(hist, name, 'f')

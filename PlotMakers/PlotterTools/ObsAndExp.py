@@ -13,7 +13,7 @@ class ObsAndExp(PlotterBase):
         self.__set_legend()
 
     def __set_legend(self):
-        self.legend = TLegend(0.65, 0.50, 0.93, 0.87)
+        self.legend = TLegend(0.69, 0.60, 0.90, 0.87)
         self.legend.SetFillStyle(0)
         self.legend.SetBorderSize(0)
 
@@ -59,7 +59,7 @@ class ObsAndExp(PlotterBase):
         y_title = self.hist_params['y_title']
         self.hist_obs.GetYaxis().SetTitle(y_title)
         self.hist_obs.GetYaxis().SetTitleOffset(1.4)
-        self.hist_obs.GetYaxis().SetRangeUser(0, maximum*1.8)
+        self.hist_obs.GetYaxis().SetRangeUser(0, maximum*1.3)
         if self.logy:
             self.hist_obs.GetYaxis().SetRangeUser(1, maximum*30)
 
@@ -93,7 +93,7 @@ class ObsAndExp(PlotterBase):
         self.syst.SetFillColorAlpha(12, 0.6)
         self.syst.SetFillStyle(3144)
         self.syst.GetXaxis().SetLabelSize(0)
-        self.legend.AddEntry(self.syst, 'stat+syst', 'f')
+        self.legend.AddEntry(self.syst, 'stat error', 'f')
 
     def __make_ratio(self):
         ratio_range = self.hist_params['ratio_range']
